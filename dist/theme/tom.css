@@ -468,3 +468,16 @@ pre {
 h1 {
     text-shadow: none!important;
 }
+
+.reveal .fragment.highlight-orange,
+.reveal .fragment.highlight-current-orange {
+	opacity: 1;
+	visibility: inherit;
+}
+	.reveal .fragment.highlight-orange.visible {
+		color: #ea921e
+	}
+
+.reveal .fragment.highlight-current-orange.current-fragment {
+	color: #ea921e
+}
