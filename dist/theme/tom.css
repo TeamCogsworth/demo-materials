@@ -464,3 +464,7 @@ pre {
 .box.box-orange {
     background: #ea921e;
 }
+
+h1 {
+    text-shadow: none!important;
+}
