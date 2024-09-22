@@ -24,10 +24,6 @@
                 <section data-external="slides/motivation.html"></section>
                 <section data-external="slides/capabilities.html"></section>
                 <section data-external="slides/case_study.html"></section>
-                <section data-external="slides/demo-1.html"></section>
-                <section data-external="slides/demo-2.html"></section>
-                <section data-external="slides/demo-3.html"></section>
-                <section data-external="slides/software-citation-station.html"></section>
                 <section data-external="slides/conclusions.html"></section>
             </div>
         </div>
@@ -36,6 +32,10 @@
         <script src="../plugin/markdown/markdown.js"></script>
         <script src="../plugin/highlight/highlight.js"></script>
         <script src="../plugin/math/math.js"></script>
+        <script src="../plugin/chart/plugin.js"></script>
+
+        <!-- Chart plugin -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
 
         <script>
             // More info about initialization & config:
@@ -44,8 +44,28 @@
             Reveal.initialize({
                 hash: true,
 
+                chart: {
+                    defaults: {
+                        color: 'white', // color of labels
+                        scale: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 1 },
+                            grid: { color: 'white' }, // color of grid lines
+                        },
+                    },
+                    line: {
+                        borderColor: ['rgba(20,220,220,.8)', 'rgba(220,120,120,.8)', 'rgba(20,120,220,.8)'],
+                        borderDash: [
+                            [5, 10],
+                            [0, 0],
+                        ],
+                    },
+                    bar: { backgroundColor: ['rgba(20,220,220,.8)', 'rgba(220,120,120,.8)', 'rgba(20,120,220,.8)'] },
+                    pie: { backgroundColor: [['rgba(0,0,0,.8)', 'rgba(220,20,20,.8)', 'rgba(20,220,20,.8)', 'rgba(220,220,20,.8)', 'rgba(20,20,220,.8)']] },
+                },
+
                 // Learn about plugins: https://revealjs.com/plugins/
-                plugins: [RevealMarkdown, RevealHighlight, RevealMath.KaTeX],
+                plugins: [RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChart],
 
                 dependencies: [
                     {
